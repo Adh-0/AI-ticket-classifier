@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ticket Classifier</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:," />
+</head>
+<body>
+  <header class="topbar">
+    <h1>AI-Powered Ticket Classifier</h1>
+    <button id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+  </header>
+
+  <main class="grid">
+    <!-- Single ticket card -->
+    <section class="card">
+      <h2>Single Ticket</h2>
+      <textarea id="ticketText" placeholder="Describe your issue…"></textarea>
+      <button id="classifyBtn">Classify</button>
+
+      <div id="result" class="hidden">
+        <p><strong>Category:</strong> <span id="category"></span></p>
+        <p><strong>Assigned Team:</strong> <span id="team"></span></p>
+      </div>
+    </section>
+
+    <!-- Bulk CSV card -->
+    <section class="card">
+      <h2>Bulk CSV</h2>
+      <input type="file" id="fileInput" accept=".csv" />
+      <button id="classifyFileBtn">Upload &amp; Classify</button>
+      <pre id="fileResult" class="hidden"></pre>
+    </section>
+  </main>
+
+  <div id="loader" class="loader hidden"></div>
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</body>
+</html>
